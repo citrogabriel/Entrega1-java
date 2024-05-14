@@ -20,5 +20,19 @@ if(cantidad == "1" ){
 }
 
 
+let buttonEnviar = document.getElementById("buttonEnviar")
+buttonEnviar.addEventListener("click",formularioGuardado)
 
 
+function formularioGuardado(){
+    const formulario = document.getElementById("Formulario")
+    const datosDeFormulario = { 
+        nombre: formulario.nombre.value,
+        edad: formulario.edad.value,
+        color: formulario.color.value,
+    }
+
+    const formularioJson = JSON.stringify(datosDeFormulario)
+
+    localStorage.setItem("informacion",formularioJson)
+}
